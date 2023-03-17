@@ -5,7 +5,7 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="icon" href="/Jemaai-logo.png"/>
+                    <link rel="icon" href="/public/images/Jemaai-logo.png"/>
                     <meta name="title" content="Jema.ai: An Open Source Jasper Alternative"/>
                     <meta name="description" content="Jema.ai is an open-source alternative to Jasper, providing powerful AI-driven content generation for marketers,
             writers, and businesses. Discover the potential of AI-powered content creation with Jema.ai"/>
@@ -20,11 +20,11 @@ class MyDocument extends Document {
                     />
                     <meta
                         property="og:image"
-                        content="https://jema.ai/Jemma.ai.png"
+                        content="https://www.jema.ai/Jemma.ai.png"
                     />
                     <meta
                         name="twitter:image"
-                        content="https://jema.ai/Jemma.ai.png"
+                        content="https://www.jema.ai/Jemma.ai.png"
                     />
                 </Head>
                 <body>
