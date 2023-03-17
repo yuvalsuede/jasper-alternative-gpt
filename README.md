@@ -58,28 +58,31 @@ The basic message structure is as follows:
 
 ```javascript
 
-// /api/chatgpt.ts
-const messages = [
-    { role: "system", content: "You are a helpful assistant." },
-    { role: "user", content: `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}. 
+const generateOutputHandler = async (template: Template, inputsData: { [key: string]: string }) => {
+    const instruction = createInstruction(template.inputs, inputsData);
+    const mainGoal = template.description;
+
+    const messages = [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}. 
             Please suggest 3 outputs. number them 1,2,3` },
-];
+    ];
 
-try {
-    const response: any = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        // @ts-ignore
-        messages: messages,
-        temperature: 1,
-    });
+    try {
+        const response: any = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            // @ts-ignore
+            messages: messages,
+            temperature: 1,
+        });
 
-    const reply = response?.data?.choices[0].message.content;
-    res.status(200).json({ reply });
-} catch (error) {
-    console.error("Error while making the API call:", error);
-    res.status(500).json({ error: "Error while making the API call." });
-}
+        const reply = response?.data?.choices[0].message.content;
+        setOutput(reply || '');
 
+    } catch (error) {
+        console.log(error)
+    }
+};
 ```
 
 ## Who made this project
