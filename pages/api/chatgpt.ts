@@ -15,14 +15,11 @@ const createInstruction = (inputs: TemplateInput[], inputsData: InputsData): str
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    console.log(process.env.OPENAI_API_KEY);
 
     if (req.method === "POST") {
         const { template, inputsData } = req.body as { template: Template; inputsData: InputsData };
         const instruction = createInstruction(template.inputs, inputsData);
         const mainGoal = template.description;
-        console.log({ mainGoal })
-        console.log({ instruction })
 
         const messages = [
             { role: "system", content: "You are a helpful assistant." },

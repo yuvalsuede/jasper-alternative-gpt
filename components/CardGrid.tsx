@@ -9,7 +9,6 @@ interface Props {
 const CardGrid: React.FC<Props> = ({cards}) => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const handleSelectCategory = (category: string) => {
-        console.log({category})
         setSelectedCategory(category);
     };
 

@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import {useRouter} from "next/router";
 import Image from "next/image";
+import Github from "./GitHub";
 
 export interface SidebarItem {
     label: string;
@@ -43,8 +44,12 @@ const Sidebar: React.FC<Props> = ({items}) => {
                 <div className="w-60 flex flex-col items-center justify-center p-4 hover:cursor-pointer" onClick={handleClick}>
                     <div className="flex flex-col mb-4">
                         <Image src={"/images/Jemaai-logo.png"} alt="Jema.ai" width="250" height="100"/>
-                        <h1 className="text-lg font-semibold text-gray-700">Jasper <i
+                        <h1 className="text-lg font-normal text-gray-700 text-center">Open Source </h1>
+                        <h1 className="text-lg font-semibold text-gray-700  text-center">Jasper <i
                             className="fas fa-arrow-right text-primary"/> alternative</h1>
+
+
+
                     </div>
                 </div>
                 <nav className="flex-1">
@@ -63,9 +68,26 @@ const Sidebar: React.FC<Props> = ({items}) => {
                                 </li>
                             </Fragment>
                         ))}
+                        <li>
+                            <div className="flex flex-row align-middle justify-center">
+                                <a
+                                    className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 animate-wobble"
+                                    href="https://github.com/yuvalsuede/ai-component-generator"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Github/>
+                                    <p>Star on Github</p>
+                                </a>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
+
+
+
             </aside>
+
         </>
     );
 };

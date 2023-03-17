@@ -10,7 +10,6 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({icon, title, description, id}) => {
-    console.log({ icon })
     // @ts-ignore
     return (
         <Link key={id} href={`/templates/${id}`}>
