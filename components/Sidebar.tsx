@@ -41,7 +41,8 @@ const Sidebar: React.FC<Props> = ({items}) => {
                 } md:translate-x-0 md:static fixed top-0 left-0 h-full md:min-h-0 md:relative md:w-60 overflow-y-hidden`}
             >
 
-                <div className="w-60 flex flex-col items-center justify-center p-4 hover:cursor-pointer" onClick={handleClick}>
+                <div className="w-60 flex flex-col items-center justify-center p-4 hover:cursor-pointer"
+                     onClick={handleClick}>
                     <div className="flex flex-col mb-4">
                         <Image src={"/images/Jemaai-logo.png"} alt="Jema.ai" width="250" height="100"/>
                         <h1 className="text-lg font-normal text-gray-700 text-center">Open Source </h1>
@@ -49,16 +50,15 @@ const Sidebar: React.FC<Props> = ({items}) => {
                             className="fas fa-arrow-right text-primary"/> alternative</h1>
 
 
-
                     </div>
                 </div>
-                <nav className="flex-1">
+                <nav className="flex-1 ">
                     <ul className="py-4">
                         {items.map((item, index) => (
                             <Fragment key={index}>
                                 <li className="mb-2 ml-8">
                                     <a
-                                        target={item?.target === 'blank' ? '_blank': '' }
+                                        target={item?.target === 'blank' ? '_blank' : ''}
                                         href={item.url}
                                         className={`text-gray-500 hover:text-gray-700 transition duration-300 ${
                                             isActive(item.url) ? 'text-primary' : ''
@@ -81,10 +81,9 @@ const Sidebar: React.FC<Props> = ({items}) => {
                                 </a>
                             </div>
                         </li>
+
                     </ul>
                 </nav>
-
-
 
             </aside>
 
