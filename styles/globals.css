@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Background */
+.bg-primary {
+    background-color: #ffffff;
+}
+
+/* Primary color for active links */
+.text-primary {
+    color: #16a481;
+}
+.background-active {
+    color: #16a481;
+}
+
+/* Secondary color for inactive links */
+.text-secondary {
+    color: #6e6e80;
+}
+
+/* H1 text color */
+.text-heading {
+    color: #000000;
+}
+
+/* H2 - H6 text color */
+.text-subheading {
+    color: #6e6e80;
+}
+
+/* Example usage */
+h1 {
+    @apply text-heading;
+}
+
+h2, h3, h4, h5, h6 {
+    @apply text-subheading;
+}
+
+a {
+    @apply text-primary;
+}
+
+a.inactive {
+    @apply text-secondary;
+}
+
+body {
+    @apply bg-primary;
+}
