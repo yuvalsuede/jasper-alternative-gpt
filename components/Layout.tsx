@@ -18,20 +18,17 @@ export const SIDEBAR_ITEMS: any = [
 ];
 
 const Layout: React.FC<Props> = ({ children, title }) => {
-
-
-
     return (
         <Fragment>
             <div className="min-h-screen relative w-full md:flex md:flex-row">
-                <div className="md:hidden z-10 fixed left-0 top-0 h-full w-full pointer-events-none">
+                <div className="md:hidden z-10 fixed left-0 top-0 h-full">
                     <Sidebar items={SIDEBAR_ITEMS} />
                 </div>
-                <div className="hidden md:block md:relative z-50">
+                <div className="hidden md:block md:relative ">
                     <Sidebar items={SIDEBAR_ITEMS} />
                 </div>
                 <main className="w-full md:flex-grow">
-                    { title && <h1 className="text-black text-2xl font-bold mb-4 pr-4 pl-4 pt-4">{title}</h1> }
+                    { title && <h1 className="text-black text-2xl font-bold mb-4 mt-10 pr-4 pl-4 pt-4">{title}</h1> }
                     {children}
                 </main>
             </div>

@@ -24,13 +24,16 @@ const Sidebar: React.FC<Props> = ({items}) => {
         return router.pathname === url;
     };
     const toggleSidebar = () => {
+        console.log('hhh')
         setIsOpen(!isOpen);
     };
 
     return (
         <>
             <button
-                className="w-10 h-10 fixed top-4 left-4 z-10 md:hidden bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="
+                z-50
+                w-10 h-10 fixed top-4 left-4 z-10 md:hidden bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
                 onClick={toggleSidebar}
             >
                 <i className={`fas fa-${isOpen ? 'times' : 'bars'} text-primary`}/>
