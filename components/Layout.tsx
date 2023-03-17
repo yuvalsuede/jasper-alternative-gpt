@@ -27,7 +27,7 @@ const Layout: React.FC<Props> = ({ children, title }) => {
                 <div className="md:hidden z-10 fixed left-0 top-0 h-full w-full pointer-events-none">
                     <Sidebar items={SIDEBAR_ITEMS} />
                 </div>
-                <div className="hidden md:block md:relative">
+                <div className="hidden md:block md:relative z-50">
                     <Sidebar items={SIDEBAR_ITEMS} />
                 </div>
                 <main className="w-full md:flex-grow">
