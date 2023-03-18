@@ -29,7 +29,7 @@ const CardGrid: React.FC<Props> = ({cards}) => {
                     {/*    <h3 className="mb-2 text-lg font-semibold text-gray-700">More templates coming soon!</h3>*/}
                     {/*    <p className="text-gray-500 flex-1"></p>*/}
                     {/*</div>*/}
-                    <div style={{"minHeight": "300px"}} className="relative p-6 h-full rounded-2xl shadow-sm bg-white bg-indigo-500">
+                    <div style={{"minHeight": "300px", background: '#6366F1'}} className="relative p-6 h-full rounded-2xl shadow-sm bg-white">
                         <div
                             className="flex items-center justify-center w-16 h-16 text-3xl rounded-full mb-4 bg-white text-indigo-500">
                             <i className="fas fa-robot"></i>
