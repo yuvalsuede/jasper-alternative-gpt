@@ -336,7 +336,36 @@ export const TEMPLATES: Template[] = [
                 "placeholder": "Funny",
             }
         ]
-    }
+    },
+    {
+        "id": "23e7-687f-0df7-1e47",
+        "title": "Facebook Ad Primary Text",
+        "description": "Craft compelling primary text for Facebook ads that attract users.",
+        "command": "Create compelling primary text for Facebook ad.",
+        "icon": "<i class='fab fa-facebook text-primary'></i>",
+        "categories": ["ads", "social_media"],
+        "inputs": [
+            {
+                "id": "companyName",
+                "type": "text",
+                "label": "Company/Product Name",
+                "placeholder": "Pushpress",
+            },
+            {
+                "id": "productDescription",
+                "type": "textarea",
+                "label": "Product description",
+                "placeholder": "Gym software that helps gym owners manage their gym with less stress and make more money.",
+            },
+            {
+                "id": "tone",
+                "type": "text",
+                "label": "Tone of voice",
+                "placeholder": "Excited",
+            }
+        ]
+    },
+
 
 
 

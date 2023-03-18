@@ -29,12 +29,12 @@ const CardGrid: React.FC<Props> = ({cards}) => {
                     {/*    <h3 className="mb-2 text-lg font-semibold text-gray-700">More templates coming soon!</h3>*/}
                     {/*    <p className="text-gray-500 flex-1"></p>*/}
                     {/*</div>*/}
-                    <div style={{"minHeight": "300px"}} className="relative p-6 h-full rounded-2xl shadow-sm bg-white">
+                    <div style={{"minHeight": "300px"}} className="relative p-6 h-full rounded-2xl shadow-sm bg-white bg-indigo-500">
                         <div
                             className="flex items-center justify-center w-16 h-16 text-3xl rounded-full mb-4 bg-white text-indigo-500">
                             <i className="fas fa-robot"></i>
                         </div>
-                        <h3 className="mb-2 text-lg font-bold text-primary">Want to integrate AI into your business?</h3>
+                        <h3 className="mb-2 text-lg font-bold text-white">Want to integrate AI into your business?</h3>
                         <a href="https://www.linkedin.com/in/yuval-suede/" target="_blank"
                            rel="noopener noreferrer"
                            className="mt-5 inline-block px-6 py-2 text-sm font-medium bg-white text-indigo-500 rounded-full shadow-md hover:bg-opacity-90">Talk

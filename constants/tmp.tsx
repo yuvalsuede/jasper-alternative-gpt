@@ -18,13 +18,13 @@ export const TMP = [
 
 
 
-// {
-//     "id": "23e7-687f-0df7-1e47",
-//     "title": "Facebook Ad Primary Text",
-//     "description": "Create the primary text for Facebook ads that generate clicks.",
-//     "icon": "",
-//     "categories": ["ads", "social_media"]
-// },
+{
+    "id": "23e7-687f-0df7-1e47",
+    "title": "Facebook Ad Primary Text",
+    "description": "Create the primary text for Facebook ads that generate clicks.",
+    "icon": "",
+    "categories": ["ads", "social_media"]
+},
 // {
 //     "id": "71d6-4fb6-4874-bf24",
 //     "title": "Google Ads Description",
