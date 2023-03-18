@@ -1,20 +1,20 @@
 export const TMP = [
 
 
-// {
-//     "id": "72e8-66f6-1009-9e54",
-//     "title": "Company Bio",
-//     "description": "Tell your company's story with a captivating bio.",
-//     "icon": "",
-//     "categories": ["marketing", "website"]
-// },
-// {
-//     "id": "e7b3-458e-62df-17c8",
-//     "title": "Content Improver",
-//     "description": "Take a piece of content and rewrite it to make it more interesting, creative, and engaging.",
-//     "icon": "",
-//     "categories": ["blog", "seo", "email"]
-// },
+{
+    "id": "72e8-66f6-1009-9e54",
+    "title": "Company Bio",
+    "description": "Tell your company's story with a captivating bio.",
+    "icon": "",
+    "categories": ["marketing", "website"]
+},
+{
+    "id": "e7b3-458e-62df-17c8",
+    "title": "Content Improver",
+    "description": "Take a piece of content and rewrite it to make it more interesting, creative, and engaging.",
+    "icon": "",
+    "categories": ["blog", "seo", "email"]
+},
 
 
 

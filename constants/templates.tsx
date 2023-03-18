@@ -286,6 +286,58 @@ export const TEMPLATES: Template[] = [
                 "placeholder": "Introducing our latest online course on email marketing strategies. Early bird sign-ups get a 25% discount.",
             }
         ]
+    },
+    {
+        "id": "72e8-66f6-1009-9e54",
+        "title": "Company Bio",
+        "description": "Share your company's story with a compelling bio.",
+        "command": "Create a compelling bio for the following company. ",
+        "icon": "<i class='fas fa-building text-primary'></i>",
+        "categories": ["marketing", "website"],
+        "inputs": [
+            {
+                "id": "companyName",
+                "type": "text",
+                "label": "Company Name",
+                "placeholder": "InnovateTech",
+            },
+            {
+                "id": "companyInformation",
+                "type": "textarea",
+                "label": "Company information",
+                "placeholder": "InnovateTech is a cutting-edge technology firm that specializes in developing software solutions for businesses. Founded in 2018 and based in New York City, we focus on helping companies streamline their processes and improve customer engagement.",
+            },
+            {
+                "id": "tone",
+                "type": "text",
+                "label": "Tone of voice",
+                "placeholder": "Professional",
+            }
+        ]
+    },
+    {
+        "id": "e7b3-458e-62df-17c8",
+        "title": "Content Improver",
+        "description": "Enhance a piece of content by rewriting it to be more engaging, creative, and captivating.",
+        "command": "Rewrite the following content to be more engaging, creative, and captivating: ",
+        "icon": "<i class='fas fa-pencil-alt text-primary'></i>",
+        "categories": ["blog", "seo", "email"],
+        "inputs": [
+            {
+                "id": "blandContent",
+                "type": "textarea",
+                "label": "Content",
+                "placeholder": "We help agencies automate their daily tasks so they can scale better and faster with less effort.",
+            },
+            {
+                "id": "tone",
+                "type": "text",
+                "label": "Tone of voice",
+                "placeholder": "Funny",
+            }
+        ]
     }
+
+
 
 ]
