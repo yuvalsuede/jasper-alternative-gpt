@@ -442,6 +442,11 @@ export const TEMPLATES: Template[] = [
                 "type": "text",
                 "label": "Topic",
                 "placeholder": "Marketing",
+            },            {
+                "id": "audience",
+                "type": "text",
+                "label": "Audience",
+                "placeholder": "Marketers, companies, business owners",
             },
         ]
     }
