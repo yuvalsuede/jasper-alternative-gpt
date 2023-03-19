@@ -365,6 +365,87 @@ export const TEMPLATES: Template[] = [
             }
         ]
     },
+    {
+        "id": "87a3-56d9-3182-2a01",
+        "title": "Job Description",
+        "description": "Create a clear and concise job description to attract suitable candidates.",
+        "command": "Write a compelling and a clear and concise job description for the following company:",
+        "icon": "<i class='fas fab fa-linkedin text-primary'></i>",
+        "categories": ["linkedin", "social_media"],
+        "inputs": [
+            {
+                "id": "jobTitle",
+                "type": "text",
+                "label": "Job Title",
+                "placeholder": "Software Engineer",
+            },
+            {
+                "id": "companyName",
+                "type": "text",
+                "label": "Company Name",
+                "placeholder": "InnovateTech",
+            },
+            {
+                "id": "companyDescription",
+                "type": "textarea",
+                "label": "Company Description",
+                "placeholder": "InnovateTech is a cutting-edge technology firm that specializes in developing software solutions for businesses.",
+            },
+            {
+                "id": "jobOverview",
+                "type": "textarea",
+                "label": "Job Overview",
+                "placeholder": "We are looking for a skilled Software Engineer to join our team and help us develop high-quality software solutions.",
+            },
+            {
+                "id": "responsibilities",
+                "type": "textarea",
+                "label": "Responsibilities",
+                "placeholder": "Design, develop, and maintain software solutions. Collaborate with cross-functional teams to deliver high-quality products.",
+            },
+            {
+                "id": "requirements",
+                "type": "textarea",
+                "label": "Requirements",
+                "placeholder": "Bachelor's degree in Computer Science or related field. Proficient in JavaScript, Python, or Java.",
+            },
+            {
+                "id": "benefits",
+                "type": "textarea",
+                "label": "Benefits",
+                "placeholder": "Competitive salary, flexible working hours, and a comprehensive benefits package.",
+            },
+            {
+                "id": "location",
+                "type": "text",
+                "label": "Location",
+                "placeholder": "New York City, NY",
+            },
+            {
+                "id": "employmentType",
+                "type": "text",
+                "label": "Employment Type",
+                "placeholder": "Full-time",
+            }
+        ]
+    },
+    {
+        "id": "a1b2-34c5-678d-90ef",
+        "title": "LinkedIn Topic Ideas",
+        "description": "Get inspired with LinkedIn topic ideas to share with your network.",
+        "command": "Suggest LinkedIn topic ideas to share with my network.",
+        "icon": "<i class='fas fab fa-linkedin text-primary'></i>",
+        "categories": ["linkedin", "social_media"],
+        "inputs": [
+            {
+                "id": "topic",
+                "type": "text",
+                "label": "Topic",
+                "placeholder": "Marketing",
+            },
+        ]
+    }
+
 
 
 

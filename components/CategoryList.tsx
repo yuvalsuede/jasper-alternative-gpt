@@ -8,6 +8,7 @@ interface Category {
 const categoriesData = [
     { id: "all", label: "All" },
     { id: "blog", label: "Blog" },
+    { id: "linkedin", label: "LinkedIn" },
     { id: "email", label: "Email" },
     { id: "marketing", label: "Marketing" },
     { id: "ecommerce", label: "Ecommerce" },
