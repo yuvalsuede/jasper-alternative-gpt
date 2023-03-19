@@ -1,0 +1,24 @@
+.typewriter-text {
+    display: inline-block;
+    position: relative;
+}
+
+.cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: currentColor;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

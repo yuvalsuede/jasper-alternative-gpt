@@ -1,7 +1,6 @@
 import {Analytics} from "@vercel/analytics/react";
 import "../styles/globals.css";
 import '../styles/animations.css';
-import '../styles/rolling-text.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import {GoogleAnalytics} from "nextjs-google-analytics";
 import { appWithTranslation } from 'next-i18next';
