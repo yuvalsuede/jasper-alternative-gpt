@@ -1,4 +1,4 @@
-// pages/api/chatgpt.old.ts
+// pages/api/chatgpt.ts
 import { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from 'openai';
 import {Template, TemplateInput} from "../../constants/templates";
