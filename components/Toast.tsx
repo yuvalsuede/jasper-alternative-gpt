@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 // @ts-ignore
-const Toast = ({ message, duration = 3000, onDismiss }) => {
+const Toast = ({message, duration = 3000, onDismiss}) => {
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {

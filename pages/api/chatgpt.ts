@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === "POST") {
         const { template, inputsData } = req.body as { template: Template; inputsData: InputsData };
         const instruction = createInstruction(template.inputs, inputsData);
-        const mainGoal = template.description;
+        const mainGoal = template.command;
 
         const messages = [
             { role: "system", content: "You are a helpful assistant." },
