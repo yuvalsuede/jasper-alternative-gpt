@@ -41,8 +41,10 @@ const InputOutputComponent = ({ template }) => {
                 messages: messages,
                 temperature: 1,
             });
+            console.log(response)
 
             const reply = response?.data?.choices[0].message.content;
+            console.log(reply)
             setOutput(reply || '');
 
         } catch (error) {
