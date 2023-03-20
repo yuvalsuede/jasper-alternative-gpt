@@ -11,9 +11,10 @@ export interface SidebarItem {
 
 interface Props {
     items: SidebarItem[];
+    onShowPopup: () => void;
 }
 
-const Sidebar: React.FC<Props> = ({items}) => {
+const Sidebar: React.FC<Props> = ({items, onShowPopup}) => {
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
 
@@ -24,7 +25,6 @@ const Sidebar: React.FC<Props> = ({items}) => {
         return router.pathname === url;
     };
     const toggleSidebar = () => {
-        console.log('hhh')
         setIsOpen(!isOpen);
     };
 
@@ -55,6 +55,7 @@ const Sidebar: React.FC<Props> = ({items}) => {
 
                     </div>
                 </div>
+
                 <nav className="flex-1">
                     <ul className="py-4">
                         <li className="mb-10">
@@ -85,8 +86,19 @@ const Sidebar: React.FC<Props> = ({items}) => {
                             </Fragment>
                         ))}
 
+                        <li>
+                            <div className="w-full flex align-middle justify-center mt-5">
+                                <button
+                                    className="w-2/3 bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-2 rounded-full font-semibold text-xs shadow-md"
+                                    onClick={onShowPopup}
+                                >
+                                    Go Pro
+                                </button>
+                            </div>
+                        </li>
 
                     </ul>
+
                 </nav>
 
             </aside>

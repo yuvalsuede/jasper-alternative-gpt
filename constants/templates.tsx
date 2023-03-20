@@ -450,9 +450,4 @@ export const TEMPLATES: Template[] = [
             },
         ]
     }
-
-
-
-
-
 ]
