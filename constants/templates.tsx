@@ -140,7 +140,7 @@ export const TEMPLATES: Template[] = [
         "id": "eb38-d6a3-3b3c-d790",
         "title": "Blog Post Outline",
         "description": "Create lists and outlines for articles, for example for 'How to' style blog posts and articles.",
-        "command": "Create lists and outlines for articles, for example for 'How to' style blog posts and articles.",
+        "command": "Create lists and outlines for an article: ",
         "icon": `<i class="fas fa-fire text-primary"></i>`,
         "categories": ["blog", "seo"],
         "inputs": [
