@@ -90,6 +90,9 @@ const generateOutputHandler = async (template: Template, inputsData: { [key: str
 My name is [Yuval](https://www.linkedin.com/in/yuval-suede/) - an entrepreneur at heart , I ❤️ building end-to-end
 systems that not only look amazing and feel state-of-the-art, but also have real meaning and impact.
 
+You can contact me on Linkedin for any suggestions, questions or thoughts. 
+https://www.linkedin.com/in/yuval-suede/
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br /> 
