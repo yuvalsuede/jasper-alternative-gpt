@@ -13,7 +13,7 @@
 </p>
 
 
-This project users ChatGPT API to create almost any text based output for your need - from marketing content
+This project uses ChatGPT API to create almost any text based output for your need - from marketing content
 to blog post ideas and a lot more. It uses simple template based components to ask ChatGPT for generating results
 Creating new templates or tasks take about 30 mins. no more, so you can extend it for your needs or wait for new
 template release :)
