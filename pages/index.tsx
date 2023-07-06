@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
             <div>
                 <a href="https://dan.com/buy-domain/jema.ai"
                    target="_blank"><img
-                    src="/images/jema-domain.png"
+                    src="/images/last-chance.png"
                     alt="Jema&#0046;ai - The&#0032;open&#0032;source&#0032;Jasper&#0046;ai&#0032;alternative | Product Hunt"
                     width="auto" height="100"/>
                 </a>
