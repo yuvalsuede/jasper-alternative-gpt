@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
                         width="250" height="54"/></a>
                 </div>
             </h1>
-            <div>
+            <div style={{ margin: '0 auto', marginTop: '10px', marginBottom: '10px'}}>
                 <a href="https://dan.com/buy-domain/jema.ai"
                    target="_blank"><img
                     src="/images/last-chance.png"
