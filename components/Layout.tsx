@@ -17,8 +17,8 @@ export const SIDEBAR_ITEMS: any = [
         target: "blank"
     },
     {
-        label: "Follow me on LinkedIn",
-        url: "https://www.linkedin.com/in/yuval-suede/",
+        label: "Leverage your business. Talk to me.",
+        url: "https://tidycal.com/yuvalsuede/60-minute-consultation-with-yuval",
         target: "blank"
     },
     {

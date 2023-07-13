@@ -18,14 +18,6 @@ const HomePage: React.FC = () => {
                         width="250" height="54"/></a>
                 </div>
             </h1>
-            <div style={{ margin: '0 auto', marginTop: '10px', marginBottom: '10px'}}>
-                <a href="https://dan.com/buy-domain/jema.ai"
-                   target="_blank"><img
-                    src="/images/last-chance.png"
-                    alt="Jema&#0046;ai - The&#0032;open&#0032;source&#0032;Jasper&#0046;ai&#0032;alternative | Product Hunt"
-                    width="auto" height="100"/>
-                </a>
-            </div>
             <h2 className="text-2xl font-light mt-5 ml-10">
                 Create amazing <strong className="text-blue-600">blog posts, marketing copy, SEO content</strong> and a
                 lot more with ChatGPT.
