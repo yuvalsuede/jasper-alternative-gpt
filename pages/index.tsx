@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import CardGrid from "../components/CardGrid";
 import {TEMPLATES} from "../constants/templates";
+import Image from "next/image";
 
 const HomePage: React.FC = () => {
 
@@ -22,6 +23,21 @@ const HomePage: React.FC = () => {
                 Create amazing <strong className="text-blue-600">blog posts, marketing copy, SEO content</strong> and a
                 lot more with ChatGPT.
             </h2>
+            <a
+                href="https://www.linkedin.com/in/yuval-suede/"
+                target="_blank"
+                rel="noreferrer"
+                className="mb-3"
+            >
+                <div className="mb-3 mt-3 ml-6">
+                    <Image
+                        alt="buy now"
+                        src="/images/buy now.png"
+                        width={600}
+                        height={220}
+                    />
+                </div>
+            </a>
             <CardGrid cards={TEMPLATES}/>
         </Layout>
     );
