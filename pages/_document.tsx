@@ -26,6 +26,8 @@ class MyDocument extends Document {
                         name="twitter:image"
                         content="https://www.jema.ai/Jemma.ai.png"
                     />
+                    <script src="https://my.hellobar.com/ad70057c85f0c544997c44ae0968d20f1b802252.js"
+                            type="text/javascript" charSet="utf-8" async="async"></script>
                 </Head>
                 <body>
                 <Main/>
