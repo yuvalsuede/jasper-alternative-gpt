@@ -22,6 +22,17 @@ template release :)
 
 # [Jema.ai](https://jema.ai) Open Source Jasper alternative
 
+
+# Get ahead of 99% of developers with AI 🚀
+
+Stay updated, informed, and at the cutting edge of the AI revolution in development.
+
+👉 [Subscribe to my newsletter](https://yuvalsuede.substack.com/)
+
+Join the elite circle of developers leveraging AI tools and insights to supercharge their projects and careers.
+
+
+
 ## How it works
 
 This project uses the [ChatGPT API](https://openai.com/api/)
@@ -100,6 +111,15 @@ I will always appreciate a STAR and an attribution of the main demo [website](ht
 
 * Fork the repository, Clone it on your device. That's it 🎉
 * Finally make a pull request :)
+
+# Get ahead of 99% of developers with AI 🚀
+
+Stay updated, informed, and at the cutting edge of the AI revolution in development.
+
+👉 [Subscribe to my newsletter](https://yuvalsuede.substack.com/)
+
+Join the elite circle of developers leveraging AI tools and insights to supercharge their projects and careers.
+
 
 ## 📝 License
 
