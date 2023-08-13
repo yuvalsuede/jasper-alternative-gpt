@@ -23,7 +23,7 @@ template release :)
 # [Jema.ai](https://jema.ai) Open Source Jasper alternative
 
 
-# Get ahead of 99% of developers with AI 🚀
+## Get ahead of 99% of developers with AI 🚀
 
 Stay updated, informed, and at the cutting edge of the AI revolution in development.
 
