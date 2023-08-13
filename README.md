@@ -114,6 +114,9 @@ I will always appreciate a STAR and an attribution of the main demo [website](ht
 
 # Get ahead of 99% of developers with AI 🚀
 
+![get ahead](https://github.com/yuvalsuede/jasper-alternative-gpt/assets/1270865/dca1a747-5d91-43dd-9faa-2368ed2f88a6)
+
+
 Stay updated, informed, and at the cutting edge of the AI revolution in development.
 
 👉 [Subscribe to my newsletter](https://yuvalsuede.substack.com/)
