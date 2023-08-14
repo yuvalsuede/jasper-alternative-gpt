@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
                     style={{ maxWidth: '800px', margin: '0 auto'}}
                     height="auto"
                     width="90%"
-                    src="/public/images/newsletter.png" alt="Join my newsletter"/>
+                    src="/images/newsletter.png" alt="Join my newsletter"/>
             </a>
         </Layout>
     );
