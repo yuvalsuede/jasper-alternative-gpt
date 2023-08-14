@@ -23,6 +23,13 @@ const HomePage: React.FC = () => {
                 lot more with ChatGPT.
             </h2>
             <CardGrid cards={TEMPLATES}/>
+            <a href="https://yuvalsuede.substack.com" target="_blank">
+                <img
+                    style={{ maxWidth: '800px', margin: '0 auto'}}
+                    height="auto"
+                    width="90%"
+                    src="/public/images/newsletter.png" alt="Join my newsletter"/>
+            </a>
         </Layout>
     );
 };
