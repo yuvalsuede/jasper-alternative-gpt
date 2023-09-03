@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
                 lot more with ChatGPT.
             </h2>
             <CardGrid cards={TEMPLATES}/>
-            <a href="https://joinaimasters.com/subscribe" target="_blank">
+            <a href="https://www.linkedin.com/in/yuval-suede/" target="_blank">
                 <img
                     style={{ maxWidth: '800px', margin: '0 auto'}}
                     height="auto"
