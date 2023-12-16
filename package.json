@@ -17,6 +17,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/analytics": "^0.1.8",
+    "ai": "^2.2.29",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "eventsource-parser": "^0.0.5",
@@ -27,7 +28,7 @@
     "next": "latest",
     "next-i18next": "^13.2.2",
     "nextjs-google-analytics": "^2.3.3",
-    "openai": "^3.2.1",
+    "openai": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.0",
@@ -39,7 +40,8 @@
     "react-use-measure": "^2.1.1",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
-    "twin.macro": "^3.1.0"
+    "twin.macro": "^3.1.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.21.2",

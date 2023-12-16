@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import Toast from "../ui/Toast";
+import { Output } from "./InputOutputComponent";
 
 interface OutputComponentProps {
-  generatedOutput: string;
+  generatedOutput: Output | undefined;
   onClearOutput: () => void;
+  errorMessage: string | null;
+  setErrorMessage: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const OutputComponent: React.FC<OutputComponentProps> = ({
   generatedOutput,
   onClearOutput,
+  errorMessage,
+  setErrorMessage,
 }) => {
   const [toastVisible, setToastVisible] = useState(false);
 
@@ -25,39 +30,51 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
     setToastVisible(false);
   };
 
-  const splitOutput = (output: string): string[] => {
-    const patterns = [
-      "___",
-      "\\d\\.",
-      "\\d\\)",
-      "\\bOption\\s*\\d",
-      "\\boption\\s*\\d",
-      "\\bOutput\\s*\\d",
-      "\\boutput\\s*\\d",
-    ];
-    for (const pattern of patterns) {
-      const regex = new RegExp(pattern, "g");
-      const matches = output.split(regex);
-      if (matches.length > 1) {
-        return matches
-          .map((match) => match.trim())
-          .filter((match) => match.length > 0);
-      }
-    }
-    return [output];
+  const handleErrorToast = () => {
+    setErrorMessage(null);
   };
 
-  const outputs = splitOutput(generatedOutput);
+  // const splitOutput = (output: string): string[] => {
+  //   const patterns = [
+  //     "___",
+  //     "\\d\\.",
+  //     "\\d\\)",
+  //     "\\bOption\\s*\\d",
+  //     "\\boption\\s*\\d",
+  //     "\\bOutput\\s*\\d",
+  //     "\\boutput\\s*\\d",
+  //   ];
+  //   for (const pattern of patterns) {
+  //     const regex = new RegExp(pattern, "g");
+  //     const matches = output.split(regex);
+  //     if (matches.length > 1) {
+  //       return matches
+  //         .map((match) => match.trim())
+  //         .filter((match) => match.length > 0);
+  //     }
+  //   }
+  //   return [output];
+  // };
+
+  // const outputs = splitOutput(generatedOutput);
 
   return (
     <div className="w-full lg:w-1/2">
+      {errorMessage !== null && (
+        <Toast
+          message={errorMessage}
+          duration={3000}
+          onDismiss={handleErrorToast}
+        />
+      )}
+
       <div className="xl:sticky xl:z-10 top-0 flex items-center px-3 bg-white border-b border-gray-200">
         <nav className="flex flex-grow py-1 space-x-3" aria-label="Tabs">
           <button className="relative transition-all duration-150 before:transition-all before:duration-150 before:absolute before:inset-0 whitespace-nowrap py-2 px-3 text-xs font-medium before:bg-gray-100 before:rounded-lg before:scale-100 before:opacity-100 text-blue-700">
             <span className="relative">
               New outputs{" "}
               <span className="px-2 py-1 ml-2 text-xs rounded-full bg-white">
-                {outputs.length}
+                {generatedOutput?.result.length || 0}
               </span>
             </span>
           </button>
@@ -72,13 +89,13 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
           </button>
         </div>
       </div>
-      <div className="w-full text-gray-900 bg-white">
+      <div className="w-full text-gray-900 bg-white space-y-4 p-2">
         {generatedOutput ? (
           <>
-            {outputs.map((answer, index) => (
+            {generatedOutput.result.map((answer, index) => (
               <div
                 key={index}
-                className="py-3 px-3 border-b border-gray-200 group cursor-pointer bg-green-50 hover:bg-green-300/5"
+                className="py-3 px-3 border-b border-gray-200 group shadow-black shadow-sm rounded-md cursor-pointer bg-green-50 hover:bg-green-300/5"
               >
                 <div className="flex items-center space-x-2">
                   {/* Your action buttons */}
@@ -87,7 +104,7 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
                   className="w-full mt-2 mb-3 text-base font-medium leading-7 text-gray-800 whitespace-pre-wrap pre"
                   onClick={() => copyTextToClipboard(answer)}
                 >
-                  {answer}
+                  {index + 1}. {answer}
                   {toastVisible && (
                     <Toast
                       message="Text copied to clipboard!"

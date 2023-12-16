@@ -33,6 +33,17 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
     setInputData(clearedinputData);
   };
 
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    try {
+      await generateOutput(template, inputData);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="w-full lg:w-1/2 bg-gray-50 border-r flex flex-col">
       <TemplateHeader
@@ -69,11 +80,7 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
 
         <Button
           // Generating the output using ChatGPT
-          onClick={async () => {
-            setIsLoading(true);
-            await generateOutput(template, inputData);
-            setIsLoading(false);
-          }}
+          onClick={handleSubmit}
           className={`px-4 py-2 text-white bg-gradient-to-r from-purple-400 to-blue-400 rounded-md hover:from-purple-300 hover:to-blue-300 relative ${
             isLoading ? "opacity-50" : ""
           }`}
