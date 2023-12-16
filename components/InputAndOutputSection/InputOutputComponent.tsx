@@ -2,19 +2,19 @@
 import React, { useState } from "react";
 import InputComponent from "./InputComponent";
 import OutputComponent from "./OutputComponent";
-import { Template } from "../constants/templates";
+import { Template } from "../../constants/templates";
+type Props = { template: Template };
 
-// @ts-ignore
-const InputOutputComponent = ({ template }) => {
+const InputOutputComponent = ({ template }: Props) => {
   const [output, setOutput] = useState("");
-
   const handleClearOutput = () => {
     setOutput("");
   };
-  const generateOutputHandler = async (
+
+  async function generateOutputHandler(
     template: Template,
     inputsData: { [key: string]: string }
-  ) => {
+  ): Promise<void> {
     const result: any = await fetch("/api/chatgpt", {
       method: "POST",
       headers: {
@@ -27,7 +27,8 @@ const InputOutputComponent = ({ template }) => {
     });
     const { reply } = await result.json();
     setOutput(reply || "");
-  };
+  }
+
   return (
     <div className="flex flex-col lg:flex-row w-full h-full">
       <InputComponent

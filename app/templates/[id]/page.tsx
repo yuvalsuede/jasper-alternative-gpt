@@ -1,5 +1,5 @@
 import { TEMPLATES } from "../../../constants/templates";
-import InputOutputComponent from "../../../components/InputOutputComponent";
+import InputOutputComponent from "../../../components/InputAndOutputSection/InputOutputComponent";
 
 type Props = { params: { id: string } };
 

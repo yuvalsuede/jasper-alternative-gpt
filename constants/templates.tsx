@@ -2,7 +2,7 @@ export type TemplateInput = {
   id: string;
   label: string;
   placeholder: string;
-  type: "text" | "textarea" | "select";
+  type: "text" | "textarea";
   options?: string[];
 };
 
