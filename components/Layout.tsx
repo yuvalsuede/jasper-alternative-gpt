@@ -2,33 +2,12 @@
 import React, { Fragment, useState } from "react";
 import Sidebar from "./Sidebar";
 import GoProPopup from "./GoproPopup";
+import { SIDEBAR_ITEMS } from "@/constants/templates";
 
 interface Props {
   children: React.ReactNode;
   title: string;
 }
-
-export const SIDEBAR_ITEMS: any = [
-  {
-    label: "Templates",
-    url: "/",
-  },
-  {
-    label: "Fork this repo",
-    url: "https://github.com/yuvalsuede/jasper-alternative-gpt",
-    target: "blank",
-  },
-  {
-    label: "Leverage your business. Talk to me.",
-    url: "https://tidycal.com/yuvalsuede/60-minute-consultation-with-yuval",
-    target: "blank",
-  },
-  {
-    label: "Contact",
-    url: "https://www.linkedin.com/in/yuval-suede/",
-    target: "blank",
-  },
-];
 
 const Layout: React.FC<Props> = ({ children, title }) => {
   const [showPopup, setShowPopup] = useState(false);
