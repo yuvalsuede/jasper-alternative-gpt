@@ -59,12 +59,12 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
           {/* ... other buttons, if needed */}
         </nav>
         <div>
-          <Button
+          <button
             onClick={onClearOutput}
             className="relative transition-all duration-150 before:transition-all before:duration-150 before:absolute before:inset-0 px-3 py-2 text-xs font-medium leading-4 text-gray-400 hover:text-gray-600 before:bg-gray-100 before:rounded-lg before:scale-50 before:opacity-0 hover:before:scale-100 hover:before:opacity-100"
           >
             <span className="relative">Clear</span>
-          </Button>
+          </button>
         </div>
       </div>
       <div className="w-full text-gray-900 bg-white space-y-4 p-2">
