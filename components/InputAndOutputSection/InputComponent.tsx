@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import TemplateHeader from "../TemplateHeader";
+import TemplateHeader from "./TemplateHeader";
 import { Template, TemplateInput } from "../../constants/templates";
 import RenderCorrectInputField from "./SelectInputType";
 import { Button } from "../ui/button";
