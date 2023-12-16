@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Toast from "../ui/Toast";
 import { Output } from "./InputOutputComponent";
-import { Button } from "../ui/button";
 
 interface OutputComponentProps {
   generatedOutput: Output | undefined;
