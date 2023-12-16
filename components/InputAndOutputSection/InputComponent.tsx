@@ -33,6 +33,7 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
     setInputData(clearedinputData);
   };
 
+  // This is for handling submit i.e The Generate Button
   const handleSubmit = async () => {
     setIsLoading(true);
     try {

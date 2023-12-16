@@ -1,22 +1,28 @@
 import { TemplateInput } from "../../../constants/templates";
 import { requestDataSchema } from "./zodSchems";
-// import { OpenAIStream, StreamingTextResponse } from "ai";
 import OpenAI from "openai";
+
+// TODO Implement ai libary.
+// import { OpenAIStream, StreamingTextResponse } from "ai";
+// To tell ai libary that our project runs in edge runtime(which is the case if we host in vercel)
+
 export const runtime = "edge";
+
 export type InputsData = {
   [key: string]: string;
 };
+// Types for ChatGPT message
 export type ChatGPTAgent = "user" | "system";
 export interface ChatGPTMessage {
   role: ChatGPTAgent;
   content: string;
 }
-
-// Create an OpenAI API client (that's edge friendly!)
+// Configuring OpenAI
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// This function converts the provided input into a instruction for ChatGPT to follow
 const createInstruction = (
   inputs: TemplateInput[],
   inputData: InputsData
@@ -26,21 +32,26 @@ const createInstruction = (
     .join("\n");
 };
 
+// The actual API Endpoint
 export async function POST(request: Request) {
+  // Getting the data
   const data = await request.json();
-  console.log(data);
   let parsedData;
   try {
+    // Parsing it with zod to see if the data provided is valid data or not
     parsedData = requestDataSchema.parse(data);
   } catch {
+    // If parsing fails then returning an error response
     return new Response("Invalid data", { status: 422 });
   }
+  // Getting the actual data that was provided if parsing was success
   const { template, inputData } = parsedData;
+  // Creating the instruction which will be sent to chatgpt model
   const instruction = createInstruction(template.inputs, inputData);
+  // Extracting the Goal form the template
   const mainGoal = template.command;
   const prompt = `Your task is: "${mainGoal}".\n\nHere are the details:\n${instruction}.\nPlease suggest three output in the form of following json schema:\n{result : ["Answer 1", "Answer 2", "Answer 3"]}
   `;
-  console.log(prompt);
   const messages = [
     {
       role: "system",
@@ -54,15 +65,15 @@ export async function POST(request: Request) {
   ] as ChatGPTMessage[];
 
   try {
+    // Making request to ChatGPT for output
     const response: any = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-1106",
       messages: messages,
       temperature: 1,
       max_tokens: 200,
+      // This makes it so that the model always outputs valid JSON
       response_format: { type: "json_object" },
     });
-
-    console.log(response);
     const reply = response.choices[0].message.content;
     return new Response(reply);
   } catch (error) {

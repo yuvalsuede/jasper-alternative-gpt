@@ -9,12 +9,15 @@ export type Output = {
 };
 
 const InputOutputComponent = ({ template }: Props) => {
+  // This state is for the actual output at the end when ChatGPT responds
   const [output, setOutput] = useState<Output>();
-
+  // This state is to show error messages to users through toast
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const handleClearOutput = () => {
     setOutput(undefined);
   };
+
+  // This function sends request to the backend to get the response from ChatGPT in the form of json object.
   async function generateOutputHandler(
     template: Template,
     inputData: { [key: string]: string }
@@ -38,9 +41,7 @@ const InputOutputComponent = ({ template }: Props) => {
         throw new Error(errorMessage);
       }
 
-      console.log(response);
       const data = await response.json();
-      console.log(data);
       setOutput(data || {});
     } catch (error: any) {
       // Handle any other errors, such as network issues

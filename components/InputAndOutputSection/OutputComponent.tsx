@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Toast from "../ui/Toast";
 import { Output } from "./InputOutputComponent";
+import { Button } from "../ui/button";
 
 interface OutputComponentProps {
   generatedOutput: Output | undefined;
@@ -25,41 +26,18 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
       console.error("Failed to copy text: ", err);
     }
   };
-
+  // This function is to close the Text Copied toast
   const handleToastDismiss = () => {
     setToastVisible(false);
   };
-
+  // This function is to close Error toast
   const handleErrorToast = () => {
     setErrorMessage(null);
   };
 
-  // const splitOutput = (output: string): string[] => {
-  //   const patterns = [
-  //     "___",
-  //     "\\d\\.",
-  //     "\\d\\)",
-  //     "\\bOption\\s*\\d",
-  //     "\\boption\\s*\\d",
-  //     "\\bOutput\\s*\\d",
-  //     "\\boutput\\s*\\d",
-  //   ];
-  //   for (const pattern of patterns) {
-  //     const regex = new RegExp(pattern, "g");
-  //     const matches = output.split(regex);
-  //     if (matches.length > 1) {
-  //       return matches
-  //         .map((match) => match.trim())
-  //         .filter((match) => match.length > 0);
-  //     }
-  //   }
-  //   return [output];
-  // };
-
-  // const outputs = splitOutput(generatedOutput);
-
   return (
     <div className="w-full lg:w-1/2">
+      {/* Displaying the error message if it is not null */}
       {errorMessage !== null && (
         <Toast
           message={errorMessage}
@@ -81,15 +59,16 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
           {/* ... other buttons, if needed */}
         </nav>
         <div>
-          <button
+          <Button
             onClick={onClearOutput}
             className="relative transition-all duration-150 before:transition-all before:duration-150 before:absolute before:inset-0 px-3 py-2 text-xs font-medium leading-4 text-gray-400 hover:text-gray-600 before:bg-gray-100 before:rounded-lg before:scale-50 before:opacity-0 hover:before:scale-100 hover:before:opacity-100"
           >
             <span className="relative">Clear</span>
-          </button>
+          </Button>
         </div>
       </div>
       <div className="w-full text-gray-900 bg-white space-y-4 p-2">
+        {/* Displaying all the output(which is in the form of list) */}
         {generatedOutput ? (
           <>
             {generatedOutput.result.map((answer, index) => (
