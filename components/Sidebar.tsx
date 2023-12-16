@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
-import Github from "./GitHub";
+import Github from "./ui/Logos/GitHub";
 
 export interface SidebarItem {
   label: string;

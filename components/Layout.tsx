@@ -7,6 +7,7 @@ interface Props {
   children: React.ReactNode;
   title: string;
 }
+
 export const SIDEBAR_ITEMS: any = [
   {
     label: "Templates",
@@ -35,6 +36,7 @@ const Layout: React.FC<Props> = ({ children, title }) => {
   const handlePopup = () => {
     setShowPopup(!showPopup);
   };
+
   return (
     <Fragment>
       <div className="min-h-screen relative w-full md:flex md:flex-row">
