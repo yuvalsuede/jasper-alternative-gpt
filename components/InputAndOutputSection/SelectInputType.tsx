@@ -1,4 +1,6 @@
 import { TemplateInput } from "@/constants/templates";
+import { Textarea } from "../ui/textarea";
+import { Input } from "../ui/input";
 type HandleChange = (
   event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 ) => void;
@@ -14,7 +16,7 @@ export default function RenderCorrectInputField({
 }: Props) {
   if (input.type === "textarea") {
     return (
-      <textarea
+      <Textarea
         id={input.id}
         value={value}
         onChange={handleChange}
@@ -26,7 +28,7 @@ export default function RenderCorrectInputField({
     );
   } else if (input.type === "text") {
     return (
-      <input
+      <Input
         maxLength={300}
         type="text"
         id={input.id}
