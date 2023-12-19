@@ -19,7 +19,7 @@ export interface CardProps {
 
 const Card: React.FC<CardProps> = ({ icon, title, description, id }) => {
   return (
-    <Link key={id} href={`/templates/${id}`} className="dark">
+    <Link key={id} href={`/templates/${id}`}>
       <UICard className="relative min-h-[300px] max-w-xl transition-all focus:ring-gray-400 focus:shadow-xl duration-150 rounded-2xl shadow-sm hover:shadow-lg hover:ring-gray-300 hover:ring-2 ring-1 ring-gray-200 group flex flex-col bg-white">
         {/* This the little star icon that is visible when hovered */}
         <div className="absolute top-4 right-4 hidden group-hover:block p-0 m-0">

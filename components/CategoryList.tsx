@@ -44,7 +44,7 @@ const CategoriesList = ({ onSelectedCategory }) => {
             `${
               selectedCategoryId === category.id
                 ? "border-blue-400 bg-blue-400 text-white hover:bg-opacity-100"
-                : "border-gray-300 bg-white text-gray-600 hover:text-gray-800 hover:shadow hover:ring-gray-200"
+                : "border-gray-300 bg-white text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:shadow hover:ring-gray-200"
             }`
           )}
           onClick={() => handleCategoryChange(category.id)}
