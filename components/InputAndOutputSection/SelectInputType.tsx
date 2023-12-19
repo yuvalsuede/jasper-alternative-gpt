@@ -1,6 +1,15 @@
 import { TemplateInput } from "@/constants/templates";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
+import { Select } from "@radix-ui/react-select";
+import {
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 type HandleChange = (
   event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 ) => void;
@@ -37,6 +46,26 @@ export default function RenderCorrectInputField({
         className="w-full p-2 mt-2 text-gray-900 bg-white border border-gray-200 rounded-lg"
         placeholder={input.placeholder}
       />
+    );
+  } else if (input.type === "select") {
+    return (
+      <Select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Languages</SelectLabel>
+            {input.languages.map((language: string) => {
+              return (
+                <SelectItem value={language.toLowerCase()}>
+                  {language}
+                </SelectItem>
+              );
+            })}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
     );
   } else {
     return <></>;

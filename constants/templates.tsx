@@ -1,10 +1,19 @@
-export type TemplateInput = {
-  id: string;
-  label: string;
-  placeholder: string;
-  type: "text" | "textarea";
-  options?: string[];
-};
+export type TemplateInput =
+  | {
+      id: string;
+      label: string;
+      placeholder: string;
+      type: "text" | "textarea";
+      options?: string[];
+    }
+  | {
+      id: string;
+      label: string;
+      placeholder: string;
+      type: "select";
+      options: string[];
+      languages: string[];
+    };
 
 export type Template = {
   id: string;

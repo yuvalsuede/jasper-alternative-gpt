@@ -4,6 +4,7 @@ import { Template, TemplateInput } from "../../constants/templates";
 import RenderCorrectInputField from "./SelectInputType";
 import { Button } from "../ui/button";
 import { shouldBeDisabled } from "@/utils/shouldTheButtonBeDisabled";
+import { Label } from "../ui/label";
 
 interface InputComponentProps {
   generateOutput: (
@@ -57,9 +58,9 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
         {/* For each input displaying the correct input field which can be a 1) text input  or 2) textarea */}
         {template.inputs.map((input: TemplateInput) => (
           <Fragment key={input.id}>
-            <label htmlFor={input.id} className="block mt-4" key={input.id}>
+            <Label htmlFor={input.id} className="block mt-4" key={input.id}>
               {input.label}
-            </label>
+            </Label>
             {/* Displays the correct input filed */}
             <RenderCorrectInputField
               input={input}
