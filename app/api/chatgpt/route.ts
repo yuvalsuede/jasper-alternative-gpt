@@ -2,10 +2,6 @@ import { TemplateInput } from "../../../constants/templates";
 import { requestDataSchema } from "./zodSchems";
 import OpenAI from "openai";
 
-// TODO Implement ai libary.
-// import { OpenAIStream, StreamingTextResponse } from "ai";
-// To tell ai libary that our project runs in edge runtime(which is the case if we host in vercel)
-
 export const runtime = "edge";
 
 export type InputsData = {
@@ -44,6 +40,7 @@ export async function POST(request: Request) {
     // If parsing fails then returning an error response
     return new Response("Invalid data", { status: 422 });
   }
+  const language = parsedData.inputData.language;
   // Getting the actual data that was provided if parsing was success
   const { template, inputData } = parsedData;
   // Creating the instruction which will be sent to chatgpt model
@@ -55,8 +52,13 @@ export async function POST(request: Request) {
   const messages = [
     {
       role: "system",
-      content:
-        "You are a helpful assistant who helps user, draft different text based output. You have been provided with a task and details. Generate the output as per the task using the given details",
+      content: `You are a helpful assistant who helps user, draft different text based output. You have been provided with a task and details.  
+        Follow these four instructions below in all your responses:
+        1.Generate the output as per the given task using the given details;
+        2. Use ${language} language only;
+        3.Use ${language} alphabet whenever possible;
+        4. Translate any other language to the ${language} language whenever possible.
+        `,
     },
     {
       role: "user",
@@ -66,11 +68,11 @@ export async function POST(request: Request) {
 
   try {
     // Making request to ChatGPT for output
-    const response: any = await openai.chat.completions.create({
+    const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-1106",
       messages: messages,
       temperature: 1,
-      max_tokens: 200,
+      max_tokens: 512,
       // This makes it so that the model always outputs valid JSON
       response_format: { type: "json_object" },
     });
