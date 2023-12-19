@@ -46,7 +46,9 @@ const Card: React.FC<CardProps> = ({
         title={title}
         description={description}
         id={id}
+        // This state setter is to change the star icon from being filled to unfilled and vice versa
         setIsInFavourite={setIsInFavourite}
+        // This state setter is to remove the templates when we are in the templates tab
         setFavouriteTemplate={setFavouriteTemplate}
         categories={categories}
       />
