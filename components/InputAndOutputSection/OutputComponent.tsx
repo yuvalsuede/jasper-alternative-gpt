@@ -67,17 +67,20 @@ function CopyButton({ answer }: { answer: string }) {
   const copyTextToClipboard = async (answer: string) => {
     try {
       await navigator.clipboard.writeText(answer);
+      // Notify the user that text has been copied to clipboard via shadcnui/toast
       toast({
         title: "Text Copied to Clipboard",
         duration: 3000,
       });
     } catch (err) {
+      // Notify the user that error has occurred when copying text to clipboard
       toast({
         title: "Failed to copy text",
         variant: "destructive",
       });
     }
   };
+
   return (
     <>
       <TooltipProvider>
@@ -98,7 +101,7 @@ function CopyButton({ answer }: { answer: string }) {
     </>
   );
 }
-
+// This the Card that is displayed when there is no output.
 function PlaceholderCard() {
   return (
     <Card className="w-4/5 mx-auto mt-12 text-gray-900 bg-white border border-gray-200 p-4 rounded-md shadow-sm flex items-center justify-center">
@@ -113,6 +116,7 @@ type OutputHeaderProps = {
   generatedOutput: Output | undefined;
   onClearOutput: () => void;
 };
+// This is the top of the output side. Where we have the number of output and clear button
 function OutputHeader({ generatedOutput, onClearOutput }: OutputHeaderProps) {
   return (
     <header className="xl:sticky xl:z-10 top-0 flex items-center px-3 py-1 bg-white border-b border-gray-200">
