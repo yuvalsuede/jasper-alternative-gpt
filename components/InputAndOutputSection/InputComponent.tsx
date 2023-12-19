@@ -27,11 +27,11 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
 
   // Clear input when the user wants
   const handleClearInputs = () => {
-    const clearedinputData = { ...inputData };
-    Object.keys(clearedinputData).forEach((key) => {
-      clearedinputData[key] = "";
+    const clearedInputData = { ...inputData };
+    Object.keys(clearedInputData).forEach((key) => {
+      clearedInputData[key] = "";
     });
-    setInputData(clearedinputData);
+    setInputData(clearedInputData);
   };
 
   // This is for handling submit i.e The Generate Button

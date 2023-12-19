@@ -40,6 +40,7 @@ export const LANGUAGES = [
   "Japanese",
   "Russian",
   "Korean",
+  "Dutch",
 ];
 
 export const SIDEBAR_ITEMS = [
