@@ -2,6 +2,7 @@
 import React, { Fragment, useState } from "react";
 import Card, { CardProps } from "./Card";
 import CategoriesList from "./CategoryList";
+import FavouriteList from "./FavouriteList";
 
 interface Props {
   cards: CardProps[];
@@ -18,6 +19,7 @@ const CardGrid: React.FC<Props> = ({ cards }) => {
       <div className="p-6 ">
         <CategoriesList onSelectedCategory={handleSelectCategory} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center place-items-center">
+          {selectedCategory === "favourite" && <FavouriteList />}
           {cards
             .filter(
               (card) =>

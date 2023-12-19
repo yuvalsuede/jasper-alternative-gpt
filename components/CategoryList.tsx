@@ -20,6 +20,7 @@ const categoriesData = [
   { id: "seo", label: "SEO" },
   { id: "video", label: "Video" },
   { id: "social-media", label: "Social Media" },
+  { id: "favourite", label: "Favourites" },
 ];
 
 // @ts-ignore
