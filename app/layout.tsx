@@ -2,6 +2,7 @@ import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import AnalyticsClient from "@/components/Analatyics/AnalyticsClient";
 import Layout from "@/components/Layout";
+import { Toaster } from "@/components/ui/toaster";
 export const metadata = {
   title: "Jema.ai",
   description:
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <AnalyticsClient />
         <Layout title="">{children}</Layout>
+        <Toaster />
       </body>
     </html>
   );

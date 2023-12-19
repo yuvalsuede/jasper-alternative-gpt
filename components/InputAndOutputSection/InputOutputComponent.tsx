@@ -59,7 +59,6 @@ const InputOutputComponent = ({ template }: Props) => {
       />
       <OutputComponent
         errorMessage={errorMessage}
-        setErrorMessage={setErrorMessage}
         onClearOutput={handleClearOutput}
         generatedOutput={output}
       />
