@@ -6,16 +6,19 @@ import { useToast } from "./ui/use-toast";
 interface Props {}
 
 export default function FavouriteList({}: Props): ReactElement {
-  const [favouriteTemplate, setFavouriteTemplate] = useState<
-    CardProps[] | []
-  >();
+  const [favouriteTemplate, setFavouriteTemplate] = useState<CardProps[] | []>(
+    []
+  );
   const { toast } = useToast();
   useEffect(() => {
+    // TODO get the stored favourites from DB
+    //! For now getting the favourites form localStorage
     const unparsedTemplate = localStorage.getItem("favourite") || "[]";
     try {
       const templates = JSON.parse(unparsedTemplate) as CardProps[];
       setFavouriteTemplate(templates);
     } catch {
+      // Throw error if . Someone manually adds something that cannot be parsed to localStorage
       toast({
         title: "Invalid Favourite List",
       });
@@ -24,7 +27,12 @@ export default function FavouriteList({}: Props): ReactElement {
   return (
     <>
       {favouriteTemplate?.map((card, index) => (
-        <Card {...card} key={index} />
+        <Card
+          {...card}
+          isInFavourite={true}
+          key={index}
+          setFavouriteTemplate={setFavouriteTemplate}
+        />
       ))}
     </>
   );

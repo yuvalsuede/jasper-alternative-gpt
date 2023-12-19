@@ -15,6 +15,8 @@ export interface CardProps {
   description: string;
   categories: string[];
   id: string;
+  isInFavourite?: boolean;
+  setFavouriteTemplate?: React.Dispatch<React.SetStateAction<[] | CardProps[]>>;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,15 +25,19 @@ const Card: React.FC<CardProps> = ({
   description,
   id,
   categories,
+  isInFavourite,
+  setFavouriteTemplate,
 }) => {
   return (
     <div className=" relative group">
       {/* This the little star icon that is visible when hovered */}
       <FavouriteButton
+        isInFavourite={isInFavourite || false}
         icon={icon}
         title={title}
         description={description}
         id={id}
+        setFavouriteTemplate={setFavouriteTemplate}
         categories={categories}
       />
       <Link key={id} href={`/templates/${id}`}>

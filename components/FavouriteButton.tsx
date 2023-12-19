@@ -3,6 +3,7 @@ import React, { ReactElement } from "react";
 import Star from "./ui/Logos/Star";
 import { Button } from "./ui/button";
 import { CardProps } from "./Card";
+import { cn } from "@/lib/utils";
 
 export default function FavouriteButton({
   icon,
@@ -10,6 +11,8 @@ export default function FavouriteButton({
   description,
   id,
   categories,
+  setFavouriteTemplate,
+  isInFavourite,
 }: CardProps): ReactElement {
   function saveFavourite() {
     let template = [
@@ -35,13 +38,26 @@ export default function FavouriteButton({
     localStorage.setItem("favourite", JSON.stringify(template));
   }
 
+  function removeFromFavourite() {
+    let favourites: CardProps[] | [] = JSON.parse(
+      localStorage.getItem("favourite") || "[]"
+    );
+    const updatedFavourite = favourites.filter((card) => card.id !== id);
+    if (setFavouriteTemplate) {
+      setFavouriteTemplate([...updatedFavourite]);
+    }
+    localStorage.setItem("favourite", JSON.stringify(updatedFavourite));
+  }
+
   return (
     <div className="absolute top-4 right-4 hidden group-hover:block p-0 m-0 z-50">
       <Button
-        onClick={saveFavourite}
+        onClick={!isInFavourite ? saveFavourite : removeFromFavourite}
         className="p-2 transition duration-150 rounded-md bg-inherit hover:text-yellow-400 text-gray-200 hover:bg-gray-200/50"
       >
-        <Star></Star>
+        <Star
+          className={cn(isInFavourite ? "fill-yellow-400" : "fill-none")}
+        ></Star>
       </Button>
     </div>
   );

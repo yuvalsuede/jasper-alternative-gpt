@@ -1,17 +1,19 @@
+import { cn } from "@/lib/utils";
 import React, { ReactElement } from "react";
 
-interface Props {}
+interface Props {
+  className: string;
+}
 
-export default function Star({}: Props): ReactElement {
+export default function Star({ className }: Props): ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      className={cn("w-4 h-4 fill-none", className)}
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke="currentColor"
       aria-hidden="true"
-      className="w-4 h-4"
     >
       <path
         strokeLinecap="round"
