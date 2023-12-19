@@ -28,10 +28,9 @@ export default function FavouriteList({}: Props): ReactElement {
     <>
       {favouriteTemplate?.map((card, index) => (
         <Card
-          {...card}
-          isInFavourite={true}
           key={index}
           setFavouriteTemplate={setFavouriteTemplate}
+          {...card}
         />
       ))}
     </>

@@ -5,6 +5,10 @@ import { Button } from "./ui/button";
 import { CardProps } from "./Card";
 import { cn } from "@/lib/utils";
 
+type extraProps = {
+  isInFavourite: boolean;
+  setIsInFavourite: React.Dispatch<React.SetStateAction<boolean>>;
+};
 export default function FavouriteButton({
   icon,
   title,
@@ -12,8 +16,9 @@ export default function FavouriteButton({
   id,
   categories,
   setFavouriteTemplate,
+  setIsInFavourite,
   isInFavourite,
-}: CardProps): ReactElement {
+}: CardProps & extraProps): ReactElement {
   function saveFavourite() {
     let template = [
       {
@@ -36,6 +41,7 @@ export default function FavouriteButton({
       template = [...template, ...favourites];
     }
     localStorage.setItem("favourite", JSON.stringify(template));
+    setIsInFavourite(true);
   }
 
   function removeFromFavourite() {
@@ -47,6 +53,7 @@ export default function FavouriteButton({
       setFavouriteTemplate([...updatedFavourite]);
     }
     localStorage.setItem("favourite", JSON.stringify(updatedFavourite));
+    setIsInFavourite(false);
   }
 
   return (
