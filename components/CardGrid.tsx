@@ -17,7 +17,7 @@ const CardGrid: React.FC<Props> = ({ cards }) => {
     <Fragment>
       <div className="p-6 ">
         <CategoriesList onSelectedCategory={handleSelectCategory} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-items-center place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center place-items-center">
           {cards
             .filter(
               (card) =>
@@ -27,8 +27,8 @@ const CardGrid: React.FC<Props> = ({ cards }) => {
             .map((card, index) => (
               <Card {...card} key={index} />
             ))}
+          <FinalCard></FinalCard>
         </div>
-        <FinalCard></FinalCard>
       </div>
     </Fragment>
   );

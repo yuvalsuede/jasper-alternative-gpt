@@ -11,8 +11,8 @@ export type TemplateInput =
       label: string;
       placeholder: string;
       type: "select";
-      options: string[];
-      languages: string[];
+      for: "language";
+      options?: string[];
     };
 
 export type Template = {
@@ -24,6 +24,23 @@ export type Template = {
   icon: any;
   categories: string[];
 };
+
+const languageTemplate = {
+  id: "language",
+  label: "Language",
+  placeholder: "Select the Output Language",
+  type: "select",
+  for: "language",
+} as TemplateInput;
+
+export const LANGUAGES = [
+  "English",
+  "Nepali",
+  "Hindi",
+  "Japanese",
+  "Russian",
+  "Korean",
+];
 
 export const SIDEBAR_ITEMS = [
   {
@@ -75,6 +92,7 @@ export const TEMPLATES: Template[] = [
           "Select a tone. For example: Witty, Friendly, Disappointed, Polite, Creative, Professional or a known person such as Michael Jordan",
         type: "text",
       },
+      { ...languageTemplate },
     ],
   },
   {
@@ -113,6 +131,7 @@ export const TEMPLATES: Template[] = [
         placeholder: "Professional. Friendly. Funny.",
         type: "text",
       },
+      { ...languageTemplate },
     ],
   },
 
@@ -145,6 +164,7 @@ export const TEMPLATES: Template[] = [
         placeholder: "Motivational",
         type: "text",
       },
+      { ...languageTemplate },
     ],
   },
   {
@@ -174,6 +194,7 @@ export const TEMPLATES: Template[] = [
         placeholder: "Informative, Friendly, Encouraging",
         type: "text",
       },
+      { ...languageTemplate },
     ],
   },
   {
@@ -197,6 +218,7 @@ export const TEMPLATES: Template[] = [
         placeholder: "Informative, Relaxed, Helpful",
         type: "text",
       },
+      { ...languageTemplate },
     ],
   },
 
@@ -236,6 +258,8 @@ export const TEMPLATES: Template[] = [
         placeholder: "Informative, Friendly, Encouraging",
         type: "text",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -259,6 +283,8 @@ export const TEMPLATES: Template[] = [
         label: "Keywords to include",
         placeholder: "ninja",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -283,6 +309,8 @@ export const TEMPLATES: Template[] = [
         placeholder:
           "Tobby was a happy dog that loved to sneak around eating people's food",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -306,6 +334,8 @@ export const TEMPLATES: Template[] = [
         label: "Tone of voice",
         placeholder: "Whimsical",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -335,6 +365,8 @@ export const TEMPLATES: Template[] = [
         placeholder:
           "Introducing our latest online course on email marketing strategies. Early bird sign-ups get a 25% discount.",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -364,6 +396,8 @@ export const TEMPLATES: Template[] = [
         label: "Tone of voice",
         placeholder: "Professional",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -389,6 +423,8 @@ export const TEMPLATES: Template[] = [
         label: "Tone of voice",
         placeholder: "Funny",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -419,6 +455,8 @@ export const TEMPLATES: Template[] = [
         label: "Tone of voice",
         placeholder: "Excited",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -490,6 +528,8 @@ export const TEMPLATES: Template[] = [
         label: "Employment Type",
         placeholder: "Full-time",
       },
+
+      { ...languageTemplate },
     ],
   },
   {
@@ -513,6 +553,8 @@ export const TEMPLATES: Template[] = [
         label: "Audience",
         placeholder: "Marketers, companies, business owners",
       },
+
+      { ...languageTemplate },
     ],
   },
 ];

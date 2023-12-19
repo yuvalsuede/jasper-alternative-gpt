@@ -1,4 +1,4 @@
-import { TemplateInput } from "@/constants/templates";
+import { LANGUAGES, TemplateInput } from "@/constants/templates";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
 import { Select } from "@radix-ui/react-select";
@@ -10,19 +10,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-type HandleChange = (
-  event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-) => void;
+
 interface Props {
   input: TemplateInput;
   value: string;
-  handleChange: HandleChange;
+  setInputData: React.Dispatch<
+    React.SetStateAction<{
+      [key: string]: string;
+    }>
+  >;
 }
 export default function RenderCorrectInputField({
   input,
   value,
-  handleChange,
+  setInputData,
 }: Props) {
+  const handleChange = (e: any) => {
+    setInputData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+  const handleSelect = (value: string) => {
+    setInputData((prev) => ({ ...prev, language: value }));
+  };
+
   if (input.type === "textarea") {
     return (
       <Textarea
@@ -49,23 +58,25 @@ export default function RenderCorrectInputField({
     );
   } else if (input.type === "select") {
     return (
-      <Select>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Select a fruit" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Languages</SelectLabel>
-            {input.languages.map((language: string) => {
-              return (
-                <SelectItem value={language.toLowerCase()}>
-                  {language}
-                </SelectItem>
-              );
-            })}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      <>
+        <Select onValueChange={handleSelect}>
+          <SelectTrigger className="w-full mt-2">
+            <SelectValue placeholder={input.placeholder} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Languages</SelectLabel>
+              {LANGUAGES.map((language: string) => {
+                return (
+                  <SelectItem key={language} value={language.toLowerCase()}>
+                    {language}
+                  </SelectItem>
+                );
+              })}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </>
     );
   } else {
     return <></>;

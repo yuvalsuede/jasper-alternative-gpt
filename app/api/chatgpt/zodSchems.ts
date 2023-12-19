@@ -1,13 +1,23 @@
 import { z } from "zod";
 export const inputsDataSchema = z.record(z.string());
 
-export const templateInputSchema = z.object({
-  id: z.string(),
-  label: z.string(),
-  placeholder: z.string(),
-  type: z.union([z.literal("text"), z.literal("textarea")]),
-  options: z.array(z.string()).optional(),
-});
+export const templateInputSchema = z.union([
+  z.object({
+    id: z.string(),
+    label: z.string(),
+    placeholder: z.string(),
+    type: z.union([z.literal("text"), z.literal("textarea")]),
+    options: z.array(z.string()).optional(),
+  }),
+  z.object({
+    id: z.string(),
+    label: z.string(),
+    placeholder: z.string(),
+    type: z.literal("select"),
+    for: z.literal("language"),
+    options: z.array(z.string()).optional(),
+  }),
+]);
 
 export const templateSchema = z.object({
   id: z.string(),

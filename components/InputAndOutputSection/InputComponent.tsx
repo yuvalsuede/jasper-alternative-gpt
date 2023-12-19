@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import TemplateHeader from "./TemplateHeader";
 import { Template, TemplateInput } from "../../constants/templates";
 import RenderCorrectInputField from "./SelectInputType";
@@ -21,10 +21,10 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
   // For storing all the input data entered by the user
   const [inputData, setInputData] = useState<{ [key: string]: string }>({});
 
-  //Even handler where user types something
-  const handleInputChange = (e: any) => {
-    setInputData({ ...inputData, [e.target.id]: e.target.value });
-  };
+  useEffect(() => {
+    console.log(inputData);
+  }, [inputData]);
+
   // Clear input when the user wants
   const handleClearInputs = () => {
     const clearedinputData = { ...inputData };
@@ -65,7 +65,7 @@ function InputComponent({ template, generateOutput }: InputComponentProps) {
             <RenderCorrectInputField
               input={input}
               value={inputData[input.id] || ""}
-              handleChange={handleInputChange}
+              setInputData={setInputData}
             />
           </Fragment>
         ))}
