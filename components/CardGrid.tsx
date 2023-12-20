@@ -1,8 +1,9 @@
 "use client";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Card, { CardProps } from "./Card";
 import CategoriesList from "./CategoryList";
 import FavouriteList from "./FavouriteList";
+import { useToast } from "./ui/use-toast";
 
 interface Props {
   cards: CardProps[];
@@ -10,16 +11,45 @@ interface Props {
 
 const CardGrid: React.FC<Props> = ({ cards }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [favouriteTemplate, setFavouriteTemplate] = useState<CardProps[] | []>(
+    []
+  );
+
   const handleSelectCategory = (category: string) => {
     setSelectedCategory(category);
   };
+
+  useEffect(() => {
+    console.log(favouriteTemplate);
+  }, [favouriteTemplate]);
+  const { toast } = useToast();
+  useEffect(() => {
+    // TODO get the stored favourites from DB
+    //! For now getting the favourites form localStorage
+    const unparsedTemplate = localStorage.getItem("favourite") || "[]";
+    try {
+      const templates = JSON.parse(unparsedTemplate) as CardProps[];
+      setFavouriteTemplate(templates);
+    } catch {
+      // Throw error if . Someone manually adds something that cannot be parsed to localStorage
+      toast({
+        title: "Invalid Favourite List",
+      });
+    }
+  }, []);
 
   return (
     <Fragment>
       <div className="p-6 ">
         <CategoriesList onSelectedCategory={handleSelectCategory} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center place-items-center">
-          {selectedCategory === "favourite" && <FavouriteList />}
+          {selectedCategory === "favourite" && (
+            <FavouriteList
+              favouriteTemplates={favouriteTemplate}
+              setFavouriteTemplate={setFavouriteTemplate}
+            />
+          )}
+
           {cards
             .filter(
               (card) =>
@@ -27,7 +57,12 @@ const CardGrid: React.FC<Props> = ({ cards }) => {
                 card?.categories?.includes(selectedCategory)
             )
             .map((card, index) => (
-              <Card {...card} key={index} />
+              <Card
+                {...card}
+                key={index}
+                favouriteList={favouriteTemplate}
+                setFavouriteTemplate={setFavouriteTemplate}
+              />
             ))}
           <FinalCard></FinalCard>
         </div>

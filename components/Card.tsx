@@ -15,25 +15,26 @@ export interface CardProps {
   description: string;
   categories: string[];
   id: string;
-  setFavouriteTemplate?: React.Dispatch<React.SetStateAction<[] | CardProps[]>>;
 }
 
-const Card: React.FC<CardProps> = ({
+export type FavouriteListState = {
+  favouriteList: CardProps[];
+  setFavouriteTemplate: React.Dispatch<React.SetStateAction<[] | CardProps[]>>;
+};
+
+const Card: React.FC<CardProps & FavouriteListState> = ({
   icon,
   title,
   description,
   id,
   categories,
   setFavouriteTemplate,
+  favouriteList,
 }) => {
   const [isInFavourite, setIsInFavourite] = useState(false);
+
   useEffect(() => {
-    let favourites: CardProps[] | [] = JSON.parse(
-      localStorage.getItem("favourite") || "[]"
-    );
-    if (favourites.findIndex((card) => card.id === id) !== -1) {
-      setIsInFavourite(true);
-    }
+    setIsInFavourite(favouriteList.findIndex((card) => card.id === id) !== -1);
   }, []);
 
   return (
