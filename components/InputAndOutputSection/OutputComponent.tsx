@@ -50,7 +50,7 @@ const OutputComponent: React.FC<OutputComponentProps> = ({
             >
               <CopyButton answer={answer}></CopyButton>
               <CardContent className="w-full mt-2 mb-3 text-base font-medium leading-7 text-gray-800 whitespace-pre-wrap pre">
-                {index + 1}. {answer}
+                {answer}
               </CardContent>
             </Card>
           ))}
