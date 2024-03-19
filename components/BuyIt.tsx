@@ -14,7 +14,9 @@ export default function GetItNow() {
                         </div>
                     </div>
                     <button
-                        className="w-[200px] bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-6 rounded-full font-semibold text-xs shadow-md"
+                        className="w-[200px] bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-6 rounded-full font-semibold text-xs shadow-md
+                        text-white text-5xl
+                        "
                     >
                         <a href="https://www.linkedin.com/in/yuval-suede/" target="_blank">Make it yours</a>
                     </button>
