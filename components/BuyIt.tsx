@@ -10,7 +10,7 @@ export default function GetItNow() {
                         <div className="flex flex-col items-center gap-2">
                             <h2
                                 style={{ letterSpacing: '1px'}}
-                                className="text-6xl font-bold tracking-tighter text-white ">This website is for SALE <br/> #1 Google ranked</h2>
+                                className="text-6xl font-bold tracking-tighter text-white ">This website is for SALE </h2>
                         </div>
                     </div>
                     <button
