@@ -9,8 +9,9 @@ export default function GetItNow() {
                     <div>
                         <div className="flex flex-col items-center gap-2">
                             <h2
-                                style={{ letterSpacing: '1px'}}
-                                className="text-6xl font-bold tracking-tighter text-white ">This website is for SALE </h2>
+                                style={{letterSpacing: '1px'}}
+                                className="text-6xl font-bold tracking-tighter text-white ">This website is for
+                                SALE </h2>
                         </div>
                     </div>
                     <button
@@ -18,7 +19,12 @@ export default function GetItNow() {
                         text-white text-5xl
                         "
                     >
-                        <a href="https://www.linkedin.com/in/yuval-suede/" target="_blank">Make it yours</a>
+                        <a
+                            style={{
+                                color: ' white !important',
+                                fontSize: '23px'
+                            }}
+                            href="https://www.linkedin.com/in/yuval-suede/" target="_blank">Make it yours</a>
                     </button>
                 </div>
             </div>
